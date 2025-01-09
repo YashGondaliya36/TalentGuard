@@ -1,0 +1,14 @@
+COLUMNS:
+  satisfaction_level: float64
+  last_evaluation: float64
+  number_project: int64
+  average_montly_hours: int64
+  time_spend_company: int64
+  Work_accident: int64
+  promotion_last_5years: int64
+  Department: object
+  salary: object
+
+TARGET_COLUMN: 
+  name : left
+  

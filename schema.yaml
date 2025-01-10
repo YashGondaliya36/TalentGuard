@@ -8,6 +8,7 @@ COLUMNS:
   promotion_last_5years: int64
   Department: object
   salary: object
+  left : int64
 
 TARGET_COLUMN: 
   name : left

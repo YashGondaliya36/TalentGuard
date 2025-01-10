@@ -1,7 +1,8 @@
 from TalentGuard.constants import *
 from TalentGuard.utils.common import read_yaml, create_directories
 from TalentGuard.entity.config_entity import (DataIngestionConfig,
-                                              DataValidationConfig)
+                                              DataValidationConfig,
+                                              DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -30,6 +31,8 @@ class ConfigurationManager:
 
 
         return data_ingestion_config
+    
+
     def get_data_validation_config(self) -> DataValidationConfig:
         config = self.config.data_validation
         schema = self.schema.COLUMNS
@@ -44,3 +47,6 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    
+

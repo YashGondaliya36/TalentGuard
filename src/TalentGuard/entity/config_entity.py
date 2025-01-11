@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
-
+from typing import List, Optional
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
@@ -19,3 +19,21 @@ class DataValidationConfig:
     all_schema: dict
 
 
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path
+    
+
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    model_name: str
+    n_estimators : int
+    max_depth : Optional[int]
+    min_samples_split : int
+    class_weight : str
+    target_column : int

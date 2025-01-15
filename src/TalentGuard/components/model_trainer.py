@@ -25,10 +25,10 @@ class ModelTrainer:
         test_y = test_data[[self.config.target_column]]
 
 
-        lr = RandomForestClassifier(n_estimators=self.config.n_estimators,
+        model = RandomForestClassifier(n_estimators=self.config.n_estimators,
                                     max_depth=self.config.max_depth,
                                     min_samples_split=self.config.min_samples_split,
                                     class_weight=self.config.class_weight)
-        lr.fit(train_x, train_y)
+        model.fit(train_x, train_y)
 
-        joblib.dump(lr, os.path.join(self.config.root_dir, self.config.model_name))
+        joblib.dump(model, os.path.join(self.config.root_dir, self.config.model_name))

@@ -18,8 +18,6 @@ class EmployeeRetentionRiskPredictor:
             transformed_data[column] = encoder.transform(transformed_data[column])
 
         prediction = self.model.predict(transformed_data)
-        print(prediction)
-        print(transformed_data)
 
         if prediction == 1:
             msg = "leave job"
